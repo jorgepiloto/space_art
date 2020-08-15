@@ -1,4 +1,4 @@
-""" Generates a Solar System with random number of planets and moons """
+""" Generates a minimalist background stars night sky """
 
 from random import randint, random
 
@@ -21,7 +21,7 @@ def background_stars(canvas, n_stars=100, color=False):
 
     Returns
     -------
-    canvaS: gizeh.Surface
+    canvas: gizeh.Surface
         Original canvas updated with stars background
 
     """
