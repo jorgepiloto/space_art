@@ -1,4 +1,4 @@
-""" Generates a Solar System with random number of planets and moons """
+""" Generates a minimalist background stars night sky """
 
 from random import randint, random
 
