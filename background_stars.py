@@ -21,7 +21,7 @@ def background_stars(canvas, n_stars=100, color=False):
 
     Returns
     -------
-    canvaS: gizeh.Surface
+    canvas: gizeh.Surface
         Original canvas updated with stars background
 
     """
