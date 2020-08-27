@@ -39,7 +39,7 @@ def background_stars(canvas, n_stars=100, color=False):
         px, py = W * random(), H * random()
         r_star = random() * 2.5
 
-        # Colorize if requried
+        # Colorize if required
         if color:
             RGB = tuple([random() for _ in range(3)])
         else:

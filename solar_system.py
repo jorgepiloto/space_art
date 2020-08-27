@@ -1,8 +1,9 @@
 """ Generates a Solar System with random planets and moons """
 
+from random import random, randrange, uniform
+
 import gizeh
 import numpy as np
-from random import random, uniform, randrange
 
 
 def solar_system(canvas, n_planets=7):
@@ -30,8 +31,8 @@ def solar_system(canvas, n_planets=7):
     dark_background.draw(canvas)
 
     # Let us start by drawing main star
-    r_sun, px_sun, py_sun = 0.80 * H, 0.15 * W, H/2
-    sun = gizeh.circle(r=r_sun, xy=[-px_sun, py_sun], fill=(255,255,0))
+    r_sun, px_sun, py_sun = 0.80 * H, 0.15 * W, H / 2
+    sun = gizeh.circle(r=r_sun, xy=[-px_sun, py_sun], fill=(255, 255, 0))
     sun.draw(canvas)
 
     # Solve for available free distance between start surface and canvas side
@@ -50,16 +51,16 @@ def solar_system(canvas, n_planets=7):
 
         # Create planet layout and draw it
         RGB = [random() for _ in range(3)]
-        planet = gizeh.circle(r=r_planet, xy=[px, H/2], fill=RGB)
+        planet = gizeh.circle(r=r_planet, xy=[px, H / 2], fill=RGB)
         planet.draw(canvas)
 
         # Generate random number of moons and locate first moon
         n_moons = randrange(0, 4)
 
         # Solve for free moon space
-        free_moon_space = H/2 - r_planet
+        free_moon_space = H / 2 - r_planet
         deltaY = free_moon_space / (n_moons + 1)
-        py = H/2 + 2 * r_planet
+        py = H / 2 + 2 * r_planet
 
         if n_moons != 0:
             for _ in range(n_moons):
@@ -70,7 +71,6 @@ def solar_system(canvas, n_planets=7):
                 moon.draw(canvas)
 
                 py += deltaY
-
 
         px += deltaX
 
